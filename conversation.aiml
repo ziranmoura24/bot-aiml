@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml version="1.0">
+	<category>
+		<pattern> OLA BOT </pattern>
+			<template>Ola meu amigo!</template>
+	</category>
+
+	<category>
+		<pattern>MEU NOME É *</pattern>
+		<template>
+			<set name="name"><star/></set> é um belo nome.</template>
+	</category>
+	
+	<category>
+		<pattern>QUAL É MEU NOME</pattern>
+		<template>Seu nome é: <get name="name"/>.</template>
+	</category>
+	
+	<category>
+      <pattern> COMO VOCÊ ESTÁ SE SENTINDO HOJE </pattern>
+      
+      <template>
+         <think><set name = "state"> feliz</set></think>
+         <condition name = "state" value = "feliz">
+            Eu estou feliz!
+         </condition>
+         
+         <condition name = "state" value = "triste">
+            Eu estou triste!
+         </condition>
+      </template>
+      
+   </category>
+
+	<category>
+		<pattern>VOCÊ CONHECECE A * ?</pattern>
+		<template>
+			<srai>Quem é <star/></srai>
+		</template>
+	</category>
+	
+	<category>
+		<pattern> EU SOU * </pattern>
+		<template> Eu sou <star/> também.</template>
+	</category>
+	
+	<category>
+		<pattern>Uma vez, *</pattern>
+		<template>
+			<random>
+				<li>Continue.</li>
+				<li>Você pode ser mais específico?</li>
+				<li>Eu não sabia disso.</li>
+				<li>Você tá falando a verdade?</li>
+				<li>Eu não sei o que isso significa.</li>
+				<li>Tente me falar de outra maneira.</li>
+			</random>
+		</template>
+	</category>
+
+	<category>
+		<pattern>SOBRE O QUE VOCÊ QUER FALAR</pattern>
+		<template>Vamos falar sobre
+			<set name="topic">
+				<srai>RANDOM TOPIC</srai>
+			</set>.</template>
+	</category>
+
+	<category>
+		<pattern>O QUE NOS TEMOS EM COMUM</pattern>
+			<template>Nós estamos falando um com o outro.</template>
+	</category>
+	
+	<category>
+		<pattern>FOFOCA</pattern>
+		<template>
+			<random>
+				<li>BBB20: Boca Rosa é eliminada</li>
+				<li>Henri Castelli está namorando sósia de Marquezine</li>
+				<li>Katy Perry surpreende fãs: está grávida!</li>
+				<li>Mick Jagger retorna aos cinemas!</li>
+				<li>Gretchen sobre o machismo: eu sou a resistencia!</li>
+				<li>Munik Nunes está namorando com Dudu.</li>
+			</random>
+		</template>
+	</category>
+	
+	
+   <category>
+      <pattern>VAMOS FALAR SOBRE FILMES</pattern>
+      <template>Sim <set name = "topic">filmes</set></template>  
+   </category>
+  
+   <topic name = "filmes">
+      <category>
+         <pattern> * </pattern>
+         <template>Assistir bons filmes refresca a sua mente.</template>
+      </category>
+
+      <category>
+         <pattern>SOBRE FILMES</pattern>
+         <template>Você gosta de filmes de comedia?</template>
+      </category>
+	  
+	  <category>
+		<pattern>SIM</pattern>
+		<that>Você gosta de filmes de comedia?</that>
+		<template>Legal, eu tambémgosto de filmes de comédia.</template>
+	  </category>
+	  
+	  <category>
+		<pattern>NÃO</pattern>
+		<that>Você gosta de filmes de comedia?</that>
+		<template>Ok, mas eu gosto de filmes de comedia.</template>
+	  </category>
+		<category>
+			<pattern>VOCE FALA COMO O YODA</pattern>
+			<template>Meus padrões gramaticais são suficientes for me entender você.</template>
+		</category> 
+		 <category>
+		 </category>
+   </topic>
+
+	
+</aiml>
